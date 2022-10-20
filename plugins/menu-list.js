@@ -271,18 +271,19 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
       const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         listMessage: {
             title: `*${ucapan()}, ${name}*`,
-            description: `
-❏ *U S E R   I N F O*
-• Nama : ${name}
-• Limit : ${limit} 
-• Premium:* ${global.prem ? '✅' : '❌'}
-• Role: ${role
-}
-• Level: ${level}
-
-Bot Aktif Selama: _*${uptime}*_
-Total Pengguna: _*${Object.keys(global.db.data.users).length}*_ 
-Mode : *${global.opts['self'] ? 'Self' : 'publik'}*`,
+            description: `┌────〔 *HumanzBotzMD* 〕───⬣
+│⬡ Aktif selama ${uptime}
+│⬡ _*${Object.keys(global.db.data.users).length}*_ Pengguna
+│⬡ Mode : *${global.opts['self'] ? 'Self' : 'publik'}*
+│⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
+│⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+╰───⬣
+┌───⬣
+│⬡ My Github : https://github.com/OrochimaruBotz
+│⬡ My Group : 
+│ https://chat.whatsapp.com/L1gRLFQdWtY1X9LoaBrFT9
+│⬡ *スパムしないでください*
+╰────────────────⬣`,
             buttonText: 'LIST MENU',
             listType: 1,
             footerText: "© GojoBot",
@@ -482,7 +483,7 @@ Mode : *${global.opts['self'] ? 'Self' : 'publik'}*`,
                {
                urlButton: {
                displayText: 'GITHUB',
-               url: 'https://github.com/johannes2803'
+               url: 'https://github.com/OrochimaruBotz'
              }
 
            },
